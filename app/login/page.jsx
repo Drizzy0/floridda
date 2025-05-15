@@ -27,7 +27,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-300 px-4">
       <div className="bg-white shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row w-full max-w-6xl">
         <div className="hidden md:block relative md:w-1/2">
           <Image
@@ -38,7 +38,7 @@ export default function LoginPage() {
           />
         </div>
 
-        <div className="p-8 w-full md:w-1/2">
+        <div className="p-8 w-full md:w-1/2 shadow-2xl">
           <div className="flex flex-col items-center mb-8">
             <Smartphone className="h-12 w-12 text-purple-600" />
             <p className="mt-1 text-gray-600">

@@ -1,11 +1,11 @@
 "use client";
-import { Search, Bell, Settings, Menu } from "lucide-react";
+import { Search, Bell, Settings, Menu, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
-  const [avatarUrl, setAvatarUrl] = useState("/placeholder.svg"); // default during SSR
+  const [avatarUrl, setAvatarUrl] = useState("/placeholder.svg");
 
   useEffect(() => {
     const seed = Date.now();
@@ -13,9 +13,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between h-16 px-6 shadow">
-      <div className="flex items-center space-x-4 sm:hidden">
-        <Menu size={17} className="cursor-pointer" />
+    <nav className="flex items-center justify-between h-16 px-6 shadow bg-gray-50">
+      <div className="block md:hidden">
+        <button className="flex items-center space-x-4">
+          <Menu size={17} />
+        </button>
       </div>
 
       <div className="flex-1 mx-2">
@@ -30,15 +32,18 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-10">
-        <span>
+        <div>
+          
+        </div>
+        <span className="hidden md:block">
+          <Moon className="text-gray-500 cursor-pointer" />
+        </span>
+
+        <span className="hidden md:block">
           <Bell className="text-gray-500 cursor-pointer" />
         </span>
 
-        <span>
-          <Settings className="text-gray-500 cursor-pointer" />
-        </span>
-
-        <span className="border-l-2 border-gray-500">
+        <span className="border-l-2 border-gray-500 hidden md:block">
           <Link href="/profile">
             <Image
               src={avatarUrl}
@@ -49,6 +54,10 @@ export default function Navbar() {
               className="block w-8 h-8 rounded-full overflow-hidden ml-5 border border-gray-400 cursor-pointer"
             />
           </Link>
+        </span>
+
+        <span className="block md:hidden">
+          <Settings className="text-gray-500 cursor-pointer" />
         </span>
       </div>
     </nav>

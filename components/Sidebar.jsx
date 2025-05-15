@@ -15,7 +15,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-50 h-screen p-6 shadow-2xl flex flex-col justify-between">
+    <aside className="hidden md:flex w-50 h-screen p-6 shadow-2xl flex-col justify-between bg-gray-50">
       <nav>
         <div className="mb-10 text-2xl font-bold text-blue-600">📞 Floridda</div>
         <ul className="space-y-1">
